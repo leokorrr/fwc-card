@@ -1,0 +1,28 @@
+.card-form {
+    background-color: $color-white;
+    padding: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    border-top-left-radius: 0.8rem;
+    display: flex;
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        margin-right: 0.3rem;
+
+        img {
+            height: 2rem;
+        }
+    }
+
+    &__input-ctn {
+        flex: 1;
+        position: relative;
+    }
+
+    &__card-input-ctn {
+        flex: 3
+    }
+}

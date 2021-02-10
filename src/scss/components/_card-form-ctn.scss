@@ -1,0 +1,10 @@
+.card-form-ctn {
+    display: flex;
+    justify-content: center;
+
+    & > div {
+        background-color: $color-card-form-ctn;
+        padding: 0.8rem;
+        max-width: 54rem;
+    }
+}
