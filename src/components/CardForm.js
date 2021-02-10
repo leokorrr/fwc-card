@@ -1,7 +1,7 @@
 import blankCardLogo from '../assets/images/logo-blank.svg'
 import mastercardLogo from '../assets/images/logo-mastercard.svg'
 import visaLogo from '../assets/images/logo-visa.svg'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import formHelper from '../helpers/formHelper'
 
 function CardForm() {
@@ -63,13 +63,10 @@ function CardForm() {
         e.preventDefault()
         setErrors(validateForm(values))
     }
-    useEffect(() => {
-
-    }, [])
     return (
         <div className='card-form-ctn'>
             <div>
-                <form className="card-form" onSubmit={() => handleSubmit()}>
+                <form className="card-form" onSubmit={(e) => handleSubmit(e)}>
                     {!cardLogos.visa && !cardLogos.mastercard && <div className="card-form__logo"><img src={blankCardLogo} alt="blank-logo"/></div>}
                     {cardLogos.visa && <div className="card-form__logo"><img src={visaLogo} alt="visa-logo"/></div>}
                     {cardLogos.mastercard && <div className="card-form__logo"><img src={mastercardLogo} alt="mastercard-logo"/></div>}
@@ -81,7 +78,7 @@ function CardForm() {
                             name="cardNumber"
                             placeholder="1111 2222 3333 4444"
                             value={values.cardNumber}
-                            onChange={handleChange}/>
+                            onChange={(e) => handleChange(e)}/>
                             {errors.cardNumber && <span className="error">{errors.cardNumber}</span>}
                     </div>
                     <div className="card-form__input-ctn">
@@ -92,7 +89,7 @@ function CardForm() {
                             minLength="7"
                             placeholder="MM / DD"
                             value={values.expDate}
-                            onChange={handleChange}/>
+                            onChange={(e) => handleChange(e)}/>
                             {errors.expDate && <span className="error">{errors.expDate}</span>}
                     </div>
                     <div className="card-form__input-ctn">

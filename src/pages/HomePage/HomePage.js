@@ -1,9 +1,11 @@
 import React from 'react'
+import CardForm from '../../components/CardForm'
 
 function HomePage() {
     return (
-        <div>
-            <h1>AAA</h1>
+        <div className="homepage">
+            <h1>Welcome to LeoPayments</h1>
+            <CardForm />
         </div>
     )
 }
