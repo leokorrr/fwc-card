@@ -1,7 +1,8 @@
 const isCardNumberValid = (value) => {
     if (/[^0-9-\s]+/.test(value)) return false;
       
-    let nCheck = 0, bEven = false;
+    let nCheck = 0;
+    let bEven = false;
     value = value.replace(/\D/g, "");
       
     for (let n = value.length - 1; n >= 0; n--) {
