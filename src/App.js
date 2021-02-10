@@ -1,16 +1,20 @@
-import './App.scss';
+import './App.scss'
+import {PublicRoute} from './router/PublicRoute/PublicRoute'
+import {BrowserRouter as Router, Switch} from 'react-router-dom'
+import {Redirect} from 'react-router'
+import HomePage from './pages/HomePage/HomePage'
+import MainLayout from './layouts/MainLayout/MainLayout'
 
-import CardForm from "./components/CardForm";
 
 function App() {
   return (
-    <div className="App">
-        <div className="app-ctn">
-            <h1>Welcome to LeoPayment</h1>
-            <CardForm />
-        </div>
-    </div>
-  );
+    <Router basename={`/`}>
+        <Switch>
+            <PublicRoute exec path={`/`} component={() => (<Redirect to={`/home`}/>)} layout={MainLayout}/>
+            <PublicRoute path={`/home`} component={HomePage} layout={MainLayout}/>
+        </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
