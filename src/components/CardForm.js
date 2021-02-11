@@ -85,6 +85,7 @@ function CardForm() {
                         <input type="text"
                             className="input"
                             name="expDate"
+                            autoComplete="off"
                             maxLength="7"
                             minLength="7"
                             placeholder="MM / DD"
